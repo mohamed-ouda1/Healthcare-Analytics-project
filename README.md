@@ -61,5 +61,5 @@ This project is a comprehensive data science solution designed to analyze health
    ```
 
 ---
-**Developed by [Your Name]**  
-*Data Analyst | Healthcare Data Specialist*
+**Developed by [MOHAMED OUDA]**  
+*Data Analyst |Al Automation Engineer *
