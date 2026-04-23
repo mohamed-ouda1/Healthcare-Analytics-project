@@ -8,7 +8,7 @@ st.set_page_config(page_title="Healthcare Cost Dashboard", layout="wide", page_i
 # Load data
 @st.cache_data
 def load_data():
-    df = pd.read_csv('clean_healthcare__dataset.csv')
+    df = pd.read_csv('data/clean_healthcare__dataset.csv')
     df = df[df['Billing Amount'] > 0]
     return df
 
@@ -19,6 +19,17 @@ st.sidebar.header("🔍 Filter Options")
 medical_condition = st.sidebar.multiselect("Select Medical Condition", options=df['Medical Condition'].unique(), default=df['Medical Condition'].unique())
 gender = st.sidebar.multiselect("Select Gender", options=df['Gender'].unique(), default=df['Gender'].unique())
 admission_type = st.sidebar.multiselect("Select Admission Type", options=df['Admission Type'].unique(), default=df['Admission Type'].unique())
+
+st.sidebar.markdown("---")
+st.sidebar.header("📂 Automated Reporting")
+if st.sidebar.button("📄 Generate Executive PDF Report"):
+    with st.spinner("Generating Report..."):
+        from reporting_system import generate_visuals, create_pdf_report
+        generate_visuals(df) # Generate using the main df
+        report_path = create_pdf_report(df)
+        st.sidebar.success(f"Report Created: {report_path}")
+        with open(report_path, "rb") as f:
+            st.sidebar.download_button("⬇️ Download Report", f, file_name=os.path.basename(report_path))
 
 # Filter data
 filtered_df = df[

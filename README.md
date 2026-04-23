@@ -1,39 +1,65 @@
-# 🏥 Healthcare Cost Analysis & Optimization
+# 🏥 Healthcare Cost Analysis & Optimization System
+
+![Dashboard Preview](healthcare_dashboard_full.png)
+
+[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
+[![Streamlit](https://img.shields.io/badge/Dashboard-Streamlit-FF4B4B.svg)](https://streamlit.io/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## 📌 Project Overview
-This project provides a comprehensive analysis of healthcare data to identify cost drivers, patient demographics, and hospital performance. Using Python and data science libraries, we perform deep exploratory data analysis (EDA) to uncover insights that can help healthcare providers optimize billing and resource allocation.
+This project is a comprehensive data science solution designed to analyze healthcare costs, patient demographics, and hospital efficiency. It transforms raw medical data into actionable insights through deep exploratory analysis and an interactive executive dashboard.
 
-## 📊 Key Objectives
-- **Clean and Normalize Data**: Handle outliers, missing values, and inconsistent formatting.
-- **Identify Cost Drivers**: Analyze how admission types and medical conditions affect billing.
-- **Demographic Insights**: Understand the age and gender distribution of patients.
-- **Hospital Performance**: Rank hospitals based on patient volume and billing efficiency.
+## 🚀 Key Features
+- **Interactive Dashboard**: A real-time Streamlit interface for dynamic data exploration.
+- **Automated PDF Reporting**: One-click generation of professional executive summaries.
+- **Advanced EDA**: In-depth analysis of cost drivers, admission types, and stay durations.
+- **Data Quality Control**: Robust cleaning pipeline to handle outliers and ensure financial data integrity.
+
+## 📊 Key Insights
+- **Emergency Admissions**: Identified as the primary cost driver, significantly outpricing elective procedures.
+- **Length of Stay Correlation**: Established a direct linear relationship between stay duration and billing complexity.
+- **Operational Efficiency**: Ranked hospitals by revenue-to-patient volume ratio to identify top performers.
 
 ## 🛠️ Technology Stack
-- **Language**: Python 3.x
-- **Libraries**: 
-  - `Pandas`: Data manipulation and cleaning
-  - `NumPy`: Numerical computations
-  - `Matplotlib` & `Seaborn`: Advanced data visualization
-
-## 📈 Key Insights Summary
-- **Admission Impact**: Emergency admissions are significantly costlier than elective ones.
-- **Stay Duration**: A direct correlation exists between length of stay and total billing amount.
-- **Outliers**: Identified and handled erroneous negative billing entries to ensure data integrity.
+- **Data Processing**: `Pandas`, `NumPy`
+- **Visualization**: `Seaborn`, `Matplotlib`, `Plotly`
+- **Dashboard**: `Streamlit`
+- **Reporting**: `fpdf2` (Automated PDF generation)
 
 ## 📂 Project Structure
-- `Healthcare Project.ipynb`: The main analysis notebook.
-- `healthcare_dataset.csv`: Raw dataset.
-- `clean_healthcare__dataset.csv`: Processed and cleaned dataset used for final insights.
+```text
+├── data/
+│   ├── healthcare_dataset.csv         # Raw Data
+│   └── clean_healthcare__dataset.csv  # Processed Data
+├── reports/                           # Generated PDF Executive Reports
+├── Healthcare Project.ipynb           # Deep Analysis Notebook
+├── dashboard.py                       # Interactive Dashboard Code
+├── reporting_system.py                # Automated Reporting Engine
+└── README.md                          # Project Documentation
+```
 
-## 🚀 How to Run
-1. Clone the repository.
-2. Install dependencies: `pip install pandas matplotlib seaborn streamlit plotly`.
-3. Open `Healthcare Project.ipynb` in Jupyter Notebook to see the deep analysis.
-4. Run the interactive dashboard:
+## ⚙️ Setup & Execution
+
+1. **Clone the Repository**:
+   ```bash
+   git clone <repository-url>
+   ```
+
+2. **Install Dependencies**:
+   ```bash
+   pip install pandas matplotlib seaborn streamlit plotly fpdf2
+   ```
+
+3. **Launch the Dashboard**:
    ```bash
    streamlit run dashboard.py
    ```
 
+4. **Generate a Report Separately**:
+   ```bash
+   python reporting_system.py
+   ```
+
 ---
-*Created by [Your Name] - Data Analyst Portfolio Project*
+**Developed by [Your Name]**  
+*Data Analyst | Healthcare Data Specialist*
